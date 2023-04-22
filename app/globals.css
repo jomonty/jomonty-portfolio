@@ -25,3 +25,36 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+@layer base {
+  :root {
+    --color-logoprimary: #3d9970;
+    --color-logosecondary: #528265;
+    --color-logoprimaryrgb: 61 153 112;
+    --color-logosecondaryrgb: 82 130 101;
+  }
+  html {
+    font-family: Lato, system-ui, sans-serif;
+  }
+  body {
+    @apply bg-zinc-50;
+    @apply dark:bg-black;
+    @apply flex;
+    @apply h-full;
+    @apply flex-col;
+  }
+
+  header,
+  main,
+  footer {
+    /* @apply bg-white; */
+    @apply text-zinc-700;
+    /* @apply dark:bg-zinc-900; */
+    @apply dark:text-zinc-100;
+  }
+
+  main {
+    @apply flex-1;
+    @apply: overflow-y-auto;
+  }
+}

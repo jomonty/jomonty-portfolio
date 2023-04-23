@@ -1,9 +1,12 @@
+import Script from "next/script";
+
 import "./globals.css";
 import { Inter } from "next/font/google";
+import { Lato } from "next/font/google";
 
-import { Header } from "./components/header/header";
+import { Header } from "./components/header/Header";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Lato({ weight: "400", subsets: ["latin"] });
 
 export const metadata = {
   title: "J Montgomery | Portfolio",
@@ -17,6 +20,20 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <Script id="darkModeSetter" type="text/javascript">
+          {`if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }`}
+        </Script>
+      </head>
+
       <body className={inter.className}>
         {/* Style layer */}
         <div className="fixed inset-0 -z-10 flex justify-center sm:px-8">

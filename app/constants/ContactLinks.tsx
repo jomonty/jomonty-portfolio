@@ -1,6 +1,12 @@
 import { GitHub, Linkedin } from "react-feather";
 
-export const ContactLinks = [
+interface ContactLink {
+  url: String;
+  url_display: String;
+  html: HTMLElement;
+}
+
+export const ContactLinks: ContactLink[] = [
   {
     url: "https://www.github.com/jomonty",
     url_display: "GitHub",

@@ -3,11 +3,11 @@ import Link from "next/link";
 
 import NavLinks from "../../constants/NavLinks";
 
-export function HeaderNavBar() {
+export function NavBar() {
   const path = usePathname();
   const StyledNavLinks = () => {
     return (
-      <ul className="flex items-center rounded-full px-2 shadow-lg ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800 dark:ring-white/10">
+      <>
         {NavLinks.map(({ name, link }) => (
           <li key={name}>
             <Link
@@ -25,13 +25,15 @@ export function HeaderNavBar() {
             </Link>
           </li>
         ))}
-      </ul>
+      </>
     );
   };
 
   return (
-    <nav className="hidden md:flex">
-      <StyledNavLinks />
+    <nav>
+      <ul className="flex items-center rounded-full px-2 shadow-lg ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800 dark:ring-white/10">
+        <StyledNavLinks />
+      </ul>
     </nav>
   );
 }

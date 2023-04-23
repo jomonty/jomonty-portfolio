@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export function HeaderLogo() {
+export function Logo() {
   return (
     <div
       className={`relative flex h-full flex-1 ${
